@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="jquery-3.3.1.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="PIB.js"></script>
+    <title>Economia</title>
+</head>
+<body>
+    <button type="button" class="btn btn-primary" data-toggle="collapse" href="#formula" aria-expanded="false" aria-controls="formula">
+        PIB pela fórmula
+    </button>
+    <button type="button" class="btn btn-primary" data-toggle="collapse" href="#tabela" aria-expanded="false" aria-controls="tabela">
+        PIB pela tabela
+    </button>
+
+
+    <div class="collapse" id="formula">
+        <h3> Calcular PIB pela fórmula: </h3>
+        <div class="text-center">
+          <div class="form-row">
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="consumo" placeholder="Consumo Privado">
+            </div>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="invest" placeholder="Investimentos">
+            </div>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="gastos" placeholder="Gastos do Governo">
+            </div>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="exports" placeholder="Volume de Exportações">
+            </div>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="imports" placeholder="Volume de Importações">
+            </div>                                    
+          </div>
+          <button type="button" onClick="handleClick()" class="btn btn-primary">Faz as conta</button>
+        </div>
+
+        <h1 id="valor">Valor do PIB: </h1>
+    </div>
+
+    <div class="collapse" id="tabela">
+            Ano:
+            <input type="number" id="ano" /><br />
+            Preço (BRL):
+            <input type="number" id="preco" /><br />
+            Quantidade:
+            <input type="text" id="quantidade" /><br /><br />
+            <input type="button" value="Adicionar produto:" onClick="addRow()" id="add"><br /><br />
+
+            <table id="table" border="1">
+                <tr>
+                    <th>Ano</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                </tr>
+            </table>
+    </div>
+</body>
+</html>
