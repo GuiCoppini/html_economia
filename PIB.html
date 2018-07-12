@@ -10,96 +10,98 @@
     <title>Economia</title>
 </head>
 <body>
- <h1>Produto Interno Bruto (PIB)</h1> 
-  <p> Escolha uma das opções de calculo abaixo.</p>
-<div class="text-center">
-    <button type="button" class="btn btn-success" data-toggle="collapse" href="#formula" aria-expanded="false" aria-controls="formula">
-        Calcula PIB pela fórmula
-    </button>
-    <button type="button" class="btn btn-success" data-toggle="collapse" href="#tabela" aria-expanded="false" aria-controls="tabela">
-        Calcula PIB pela tabela
-    </button>
-</div>
-
-
-<div class="collapse" id="formula">
-    <h3> Calcular PIB pela fórmula: </h3>
+<div class="container-fluid">
+    <h1>Produto Interno Bruto (PIB)</h1>
+    <p> Escolha uma das opções de calculo abaixo.</p>
     <div class="text-center">
-        <div class="form-row">
-            <div class="col-sm-2">
-                <input type="number" class="form-control" id="consumo" placeholder="Consumo Privado">
-            </div>
-            <div class="col-sm-2">
-                <input type="number" class="form-control" id="invest" placeholder="Investimentos">
-            </div>
-            <div class="col-sm-2">
-                <input type="number" class="form-control" id="gastos" placeholder="Gastos do Governo">
-            </div>
-            <div class="col-sm-2">
-                <input type="number" class="form-control" id="exports" placeholder="Volume de Exportações">
-            </div>
-            <div class="col-sm-2">
-                <input type="number" class="form-control" id="imports" placeholder="Volume de Importações">
-            </div>
-        </div>
-        <button type="button" onClick="handleClick()" class="btn btn-primary">Calcular PIB</button>
+        <button type="button" class="btn btn-success" data-toggle="collapse" href="#formula" aria-expanded="false" aria-controls="formula">
+            Calcula PIB pela fórmula
+        </button>
+        <button type="button" class="btn btn-success" data-toggle="collapse" href="#tabela" aria-expanded="false" aria-controls="tabela">
+            Calcula PIB pela tabela
+        </button>
     </div>
 
-    <h1 id="valor"></h1>
-</div>
-<br/><br/><br/><br/>
-<div class="collapse" id="tabela">
-    <div class="form-row">
-        <div class="col-sm-2">
-            Ano: <input class="form-control" placeholder="Ano" type="number" id="ano"/>
+
+    <div class="collapse" id="formula">
+        <h3> Calcular PIB pela fórmula: </h3>
+        <div class="text-center">
+            <div class="form-row">
+                <div class="col-sm-2">
+                    <input type="number" class="form-control" id="consumo" placeholder="Consumo Privado">
+                </div>
+                <div class="col-sm-2">
+                    <input type="number" class="form-control" id="invest" placeholder="Investimentos">
+                </div>
+                <div class="col-sm-2">
+                    <input type="number" class="form-control" id="gastos" placeholder="Gastos do Governo">
+                </div>
+                <div class="col-sm-2">
+                    <input type="number" class="form-control" id="exports" placeholder="Volume de Exportações">
+                </div>
+                <div class="col-sm-2">
+                    <input type="number" class="form-control" id="imports" placeholder="Volume de Importações">
+                </div>
+            </div>
+            <button type="button" onClick="handleClick()" class="btn btn-primary">Calcular PIB</button>
         </div>
-        <div class="col-sm-2">
-            Preço: <input class="form-control" placeholder="Preço" type="number" id="preco"/>
-        </div>
-        <div class="col-sm-2">
-            Quantidade: <input class="form-control" placeholder="Quantidade" type="number" id="quantidade"/>
-        </div>
-        <div class="col-sm-2">
-            Nome do Produto: <input class="form-control" placeholder="Nome do Produto" type="text" id="nome_item"/>
-        </div>
-        <div class="col-sm-2">
-            <br/>
-            <input type="button" class="btn" value="Adicionar na Tabela" onClick="addRow()" id="add">
-        </div>
+
+        <h1 id="valor"></h1>
     </div>
     <br/><br/><br/><br/>
-    <div class="col-md-4">
-        <table id="table" class="table table-bordered col-md-6" border="1">
-            <tr>
-                <th>Ano</th>
-                <th>Preço</th>
-                <th>Quantidade</th>
-                <th>Nome do Produto</th>
-            </tr>
-        </table>
-    </div>
+    <div class="collapse" id="tabela">
+        <div class="form-row">
+            <div class="col-sm-2">
+                Ano: <input class="form-control" placeholder="Ano" type="number" id="ano"/>
+            </div>
+            <div class="col-sm-2">
+                Preço: <input class="form-control" placeholder="Preço" type="number" id="preco"/>
+            </div>
+            <div class="col-sm-2">
+                Quantidade: <input class="form-control" placeholder="Quantidade" type="number" id="quantidade"/>
+            </div>
+            <div class="col-sm-2">
+                Nome do Produto: <input class="form-control" placeholder="Nome do Produto" type="text" id="nome_item"/>
+            </div>
+            <div class="col-sm-2">
+                <br/>
+                <input type="button" class="btn" value="Adicionar na Tabela" onClick="addRow()" id="add">
+            </div>
+        </div>
+        <br/><br/><br/><br/>
+        <div class="col-md-4">
+            <table id="table" class="table table-bordered col-md-6" border="1">
+                <tr>
+                    <th>Ano</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Nome do Produto</th>
+                </tr>
+            </table>
+        </div>
 
-    <div class="form-row col-sm-2">
-        <strong>Calcular PIB Nominal:</strong>
-        <br/>
-        De que ano deseja calcular o PIB Nominal?
-        <input class="form-control" placeholder="Ano" type="number" id="ano_nominal"/>
-        <br/>
-        <button class="btn" onclick="calcPibNominal()">Calcular</button>
-        <p id="pib_nominal"></p>
-    </div>
+        <div class="form-row col-sm-2">
+            <strong>Calcular PIB Nominal:</strong>
+            <br/>
+            De que ano deseja calcular o PIB Nominal?
+            <input class="form-control" placeholder="Ano" type="number" id="ano_nominal"/>
+            <br/>
+            <button class="btn" onclick="calcPibNominal()">Calcular</button>
+            <p id="pib_nominal"></p>
+        </div>
 
 
-    <div class="form-row col-sm-2">
-        <strong>Calcular PIB Real:</strong>
-        <br/>
-        De que ano deseja calcular o PIB Real?
-        <input class="form-control" placeholder="Ano" type="number" id="ano_real"/>
-        <br/>
-        Com base em qual ano?
-        <input class="form-control" placeholder="Ano" type="number" id="ano_base_real"/>
-        <button class="btn" onclick="calcPibReal()">Calcular</button>
-        <p id="pib_real"></p>
+        <div class="form-row col-sm-2">
+            <strong>Calcular PIB Real:</strong>
+            <br/>
+            De que ano deseja calcular o PIB Real?
+            <input class="form-control" placeholder="Ano" type="number" id="ano_real"/>
+            <br/>
+            Com base em qual ano?
+            <input class="form-control" placeholder="Ano" type="number" id="ano_base_real"/>
+            <button class="btn" onclick="calcPibReal()">Calcular</button>
+            <p id="pib_real"></p>
+        </div>
     </div>
 </div>
 </body>
