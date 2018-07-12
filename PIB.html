@@ -7,12 +7,18 @@
     <link href="bootstrap.min.css" rel="stylesheet"></link>
     <script src="bootstrap.min.js"></script>
     <script src="PIB.js"></script>
+    <script src="backButton.js"></script>
     <title>Economia</title>
 </head>
 <body>
 <div class="container-fluid">
     <h1>Produto Interno Bruto (PIB)</h1>
     <p> Escolha uma das opções de calculo abaixo.</p>
+
+    <div class = "text-right">
+<button button class="btn btn-danger" onclick="goBack()">Voltar</button>  
+</div>
+
     <div class="text-center">
         <button type="button" class="btn btn-success" data-toggle="collapse" href="#formula" aria-expanded="false" aria-controls="formula">
             Calcula PIB pela fórmula
