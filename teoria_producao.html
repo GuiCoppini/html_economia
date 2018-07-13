@@ -8,11 +8,6 @@
     <link href="bootstrap.min.css" rel="stylesheet"></link>
     <script src="bootstrap.min.js"></script>
 
-    <script src="./highcharts/highcharts.js"></script>
-    <script src="./highcharts/modules/series-label.js"></script>
-    <script src="./highcharts/modules/exporting.js"></script>
-    <script src="./highcharts/modules/export-data.js"></script>
-
     <title>Economia</title>
 </head>
 
@@ -20,6 +15,10 @@
     <div class="text-center" style="margin-right:50px; margin-left:50px; margin-bottom: 50px;">
         <div class="jumbotron text-center">
             <h1>Teoria da Produção</h1>
+        </div>
+
+        <div class="text-right" style="margin-top:30px; margin-bottom:30px">
+            <button button class="btn btn-danger" onclick="goBack()">Voltar</button>
         </div>
 
         <p>A Teoria de Produção faz parte da Teoria da Firma, e tenta determinar qual a quantidade ideal para ser produzida
@@ -58,78 +57,17 @@
             produção, podem possuir três formas:</p>
 
         <ul class="list-group">
-            <li class="list-group-item"><b>Retornos constantes de escala:</b> ao se aumentar X vezes os fatores de produção, a quantidade produzida também aumenta em X vezes.</li>
-            <li class="list-group-item"><b>Retornos crescentes de escala:</b> quando multiplicamos os fatores de produção por X, a quantidade produzida aumenta mais do que X vezes.</li>
-            <li class="list-group-item"><b>Retornos decrescentes de escala:</b> ao multiplicarmos os fatores de produção por X, a quantidade produzida aumentará menos do que X vezes.</li>
+            <li class="list-group-item">
+                <b>Retornos constantes de escala:</b> ao se aumentar X vezes os fatores de produção, a quantidade produzida
+                também aumenta em X vezes.</li>
+            <li class="list-group-item">
+                <b>Retornos crescentes de escala:</b> quando multiplicamos os fatores de produção por X, a quantidade produzida
+                aumenta mais do que X vezes.</li>
+            <li class="list-group-item">
+                <b>Retornos decrescentes de escala:</b> ao multiplicarmos os fatores de produção por X, a quantidade produzida
+                aumentará menos do que X vezes.</li>
         </ul>
     </div>
 </body>
-
-<script>
-
-    Highcharts.chart('container', {
-
-        title: {
-            text: 'Solar Employment Growth by Sector, 2010-2016'
-        },
-
-        subtitle: {
-            text: 'Source: thesolarfoundation.com'
-        },
-
-        yAxis: {
-            title: {
-                text: 'Number of Employees'
-            }
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
-
-        plotOptions: {
-            series: {
-                label: {
-                    connectorAllowed: false
-                },
-                pointStart: 2010
-            }
-        },
-
-        series: [{
-            name: 'Installation',
-            data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-        }, {
-            name: 'Manufacturing',
-            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-        }, {
-            name: 'Sales & Distribution',
-            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-        }, {
-            name: 'Project Development',
-            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-        }, {
-            name: 'Other',
-            data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-        }],
-
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
-        }
-
-    });
-</script>
 
 </html>
