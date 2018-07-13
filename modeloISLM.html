@@ -8,7 +8,10 @@
     <script src="bootstrap.min.js"></script>
     <script src="PIB.js"></script>
     <script src="backButton.js"></script>
+
     <title>Economia</title>
+
+
 </head>
 <body>
 <div class="container-fluid">
@@ -22,7 +25,7 @@
         <button button class="btn btn-danger" onclick="goBack()">Voltar</button>
     </div>
 
-    <!--TERMINA AQUI -->
+    <!--COMECA PAINEL AQUI -->
     <div class="panel-group" id="Variaveis">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -162,8 +165,123 @@
         </div>
     </div>
     <!--TERMINA AQUI -->
+    <div class="text-center">
+        <h2>Ao relacionarmos os mercados, podemos ter os seguintes cenários:</h2> </p>
+    </div>
 
+
+    <div class="text-center" id="myGroup">
+        <button class="btn dropdown btn-info" data-toggle="collapse" data-target="#aumento_trib" data-parent="#myGroup">
+            Aumento da tributação
+        </button>
+        <button class="btn dropdown btn-info" data-toggle="collapse" data-target="#aumento_gastos"
+                data-parent="#myGroup">
+            Aumento nos gastos
+        </button>
+        <button class="btn dropdown btn-info" data-toggle="collapse" data-target="#aumento_of_mon"
+                data-parent="#myGroup">
+            Aumento da oferta monetária
+        </button>
+        <button class="btn dropdown btn-info" data-toggle="collapse" data-target="#dim_of_mon" data-parent="#myGroup">
+            Diminuição da oferta monetária
+        </button>
+
+        <div class="accordion-group">
+            <div class="unique-collapse collapse indent" id="aumento_trib">
+                <p>
+                <h4> Ao relacionar tributação com taxa de juros e renda, nota-se que com o aumento da tributação, a
+                    renda
+                    diminui (Y1->Y2), uma vez que com maior tributo o consumo tende a diminuir e diminui a necessidade
+                    de
+                    arrecadação por meio de juros (i1->i2) - Graficamente, com o aumento do tributo, há um deslocamento
+                    da
+                    curva IS para a esquerda, demonstrando queda na taxa de juros e queda na renda (IS1->IS2):</h4></p>
+
+                <img src="images/Aumento-Tributacao.jpg"
+                     alt="Oferta Agregada e Demanda Agregada"
+                     style="width:256px;height:256px;">
+            </div>
+        </div>
+
+        <div class="unique-collapse collapse indent" id="aumento_gastos">
+            <p><h4>Ao relacionar gasto do governo com taxa de juros e renda, nota-se que quando o governo sinaliza um
+            aumento nos gastos, há um aumento na produção (Y1->Y2) e se torna necessário um aumento na arrecadação por
+            meio de juros (i1->i2) - Graficamente, com o aumento nos gastos do governo, há um deslocamento da curva IS
+            para direita (IS1->IS2):
+        </h4></p>
+            <img src="images/Aumento-Gastos-Governo.jpg"
+                 alt="Oferta Agregada e Demanda Agregada"
+                 style="width:256px;height:256px;">
+        </div>
+
+        <div class="unique-collapse collapse indent" id="aumento_of_mon">
+            <p><h4>Ao relacionar oferta monetária com taxa de juros e renda, nota-se que com aumento da oferta
+            monetária, aumenta-se o consumo/circulação de dinheiro, aumentando a renda (Y1->Y2), e diminuem as taxas de
+            juros (i1->i2), uma vez que o juros pode ser dado como o “preço do dinheiro”, se há dinheiro farto, este
+            perde seu valor - Graficamente, com o aumento da oferta monetária, há um deslocamento da curva LM para a
+            direita (LM1->LM2);
+        </h4></p>
+            <img src="images/Aumento-Oferta-Monetaria.jpg"
+                 alt="Oferta Agregada e Demanda Agregada"
+                 style="width:256px;height:256px;">
+        </div>
+
+        <div class="unique-collapse collapse indent" id="dim_of_mon">
+            <p><h4>Ao relacionar oferta monetária com taxa de juros e renda, nota-se que com diminuição da oferta
+            monetária, diminui-se o consumo/circulação de dinheiro, diminuindo a renda (Y1->Y2) e aumentam as taxas de
+            juros, uma vez que o juros (i1->i2) pode ser dado como o “preço do dinheiro”, se há pouco dinheiro, este se
+            torna valioso - Graficamente, com o aumento da oferta monetária, há um deslocamento da curva LM para a
+            esquerda (LM1->LM2);
+        </h4></p>
+            <img src="images/Diminuicao-Oferta-Monetaria.jpg"
+                 alt="Oferta Agregada e Demanda Agregada"
+                 style="width:256px;height:256px;">
+        </div>
+    </div>
 </div>
 
+<script type="text/javascript">
+	$('.unique-collapse').each(function(){
+        $(this).collapse('hide');
+    });
+  $('.unique-collapse').on('show.bs.collapse', function () {
+    $('.unique-collapse').each(function(){
+        $(this).collapse('hide');
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
 </body>
 </html>
