@@ -11,16 +11,127 @@
     <title>Economia</title>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="text-center">
         <div class="jumbotron">
-            <h2>Oferta Agregada e Demanda Agregada</h2>
+            <h2>Modelo IS/LM</h2>
         </div>
     </div>
-    
+
     <div class="text-right">
         <button button class="btn btn-danger" onclick="goBack()">Voltar</button>
     </div>
+
+    <!--TERMINA AQUI -->
+    <div class="panel-group" id="Variaveis">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#Variaveis" href="#collapse1">
+                        A curva IS </a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <h4>
+                        <p>
+                            A curva IS relaciona o nível de demanda agregada com o nível de taxa de juros.
+                            Um aumento da taxa de juros reduz a demanda agregada uma vez que afeta o consumo e reduz o
+                            investimento.
+
+                        </p>
+                        <p>
+                            O equilíbrio entre o Mercado de Bens e Serviços pode ser expressado pelas seguintes
+                            equações:
+                            <br/>
+                            Y = C+I+G e Y = C+S+G
+                            <br/>
+                            que representam a igualdade Produto = Despesa = Renda, onde:
+                            <br/>
+                            C = Consumo,
+                            I = Investimento,
+                            S = Saving (Poupança),
+                            G = Gastos do Governo.
+                            Se igualarmos as equações, obtemos:
+                            I=S (Investment = Saving).
+                        </p>
+                        <br/>
+                        <p>
+                            Reescrevendo a primeira equação de forma a termos o consumo em função da renda disponível
+                            (produto -
+                            tributos) e do consumo autônomo, e os investimentos em função da taxa de juros, obtemos:
+                            <br/>
+                            Y = b + C(Y-T) + I(r) + G,
+                            que pode se reescrita como:
+                            y-(I(r)/1-C) = b-CT+G/1-C
+                            <br/>
+                            Onde:
+                            <br/>
+                            Y = Renda (Demanda Agregada),
+                            b = Consumo autônomo
+                            C = Consumo das famílias,
+                            T = Tributação
+                            I(r) = Investimento em função da taxa de juros,
+                            G = Dispêndios do Governo
+                            <br/>
+                            Devido a relação negativa entre investimento e taxa de juros, obtemos a curva negativamente
+                            inclinada:
+                        </p>
+                        <div>
+                            <button type="button" class="btn btn-xl btn-warning" data-toggle="collapse"
+                                    href="#GraficoCurvaIS"
+                                    aria-expanded="false" aria-controls="GraficoCurvaIS">
+                                Exibir gráfico
+                        </div>
+                        <figure class=collapse id="GraficoCurvaIS">
+                            <img src="images/image18.png"
+                                 alt="Oferta Agregada e Demanda Agregada"
+                                 style="width:256px;height:256px;">
+                            <figcaption>Para a taxa de juros I1, obtemos a renda Y1. Quanto maior a taxa de juros,
+                                menor a renda e vice versa.
+                            </figcaption>
+                        </figure>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#Variaveis" href="#collapse2">
+                        A curva LM</a>
+                </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <h4>
+                        <p>
+                            A curva IS relaciona o nível de demanda agregada com o nível de taxa de juros.
+                            Um aumento da taxa de juros reduz a demanda agregada uma vez que afeta o consumo e reduz o
+                            investimento.
+
+                        </p>
+                        <p>
+                            O equilíbrio entre o Mercado de Bens e Serviços pode ser expressado pelas seguintes
+                            equações:
+                            <br/>
+                            Y = C+I+G e Y = C+S+G
+                            <br/>
+                            que representam a igualdade Produto = Despesa = Renda, onde:
+                            <br/>
+                            C = Consumo,
+                            I = Investimento,
+                            S = Saving (Poupança),
+                            G = Gastos do Governo.
+                            Se igualarmos as equações, obtemos:
+                            I=S (Investment = Saving).
+                        </p>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--TERMINA AQUI -->
 
 </div>
 
