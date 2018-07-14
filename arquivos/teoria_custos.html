@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="jquery-3.3.1.min.js"></script>
+    <link href="bootstrap.min.css" rel="stylesheet"></link>
+    <script src="bootstrap.min.js"></script>
+    <script src="backButton.js"></script>
+
+    <title>Economia</title>
+</head>
+
+<body>
+    <div class="text-center" style="margin-right:50px; margin-left:50px; margin-bottom: 50px;">
+        <div class="jumbotron text-center">
+            <h1>Teoria dos Custos</h1>
+        </div>
+
+        <div class="text-right" style="margin-top:30px; margin-bottom:30px">
+            <button button class="btn btn-danger" onclick="goBack()">Voltar</button>
+        </div>
+
+        <p>Toda empresa possui uma quantidade X de produtos produzidos em um determinado período e também um custo Y para a
+            produção desses produtos. Veja a tabela abaixo que ilustra essa situação: </p>
+
+        <img src="images/teoria_custos_table.png" vspace="30">
+
+        <p>Por exemplo, se a empresa nada produzir, ela terá $ 15,00 de custo fixo. Se ela fabricar uma unidade do produto,
+            seu custo total será de $ 17,00 correspondente à soma de $ 15,00 do custo fixo com o custo variável de $ 2,00.
+            Caso a empresa produza duas unidades, o custo total aumenta para $ 18,50 pois, embora o custo fixo permaneça
+            em $ 15,00, o custo variável da fabricação aumenta para $ 3,50. </p>
+
+        <p>Existe também o chamado "Break-Even point"/Ponto de equilíbrio, que consiste na medida exata em que a empresa teria
+            o maior lucro possível. A receita é a quantidade * preço vendido. O ponto de lucro máximo é quando o custo marginal
+            se iguala à receita marginal e o ponto de lucro mínimo seria quando a receita da empresa cobre seus custos de
+            produção porém sem sobrar absolutamente nada. Ponto de equilíbrio é o valor que a empresa precisa vender para
+            cobrir o custo das mercadorias e despesas para não ter lucro nem prejuízo.</p>
+
+        <p>Margem de Contribuição é a diferença entre Vendas totais e Custos Variáveis totais. Ex: Vendas totais 100,00 (menos)
+            custos variáveis totais 70,00 = margem 30,00. (100,00 – 70,00) = 30,00 / 100 = 30% (margem em percentual).</p>
+
+        <p>O Ponto de Equilíbrio é o quociente simples da divisão dos valores dos custos e despesas fixas pela margem de contribuição.</p>
+
+        <img src="images/teoria_custos_example.png" vspace="30">
+
+        <p>Como podemos observar no exemplo, vendendo 100,00, teremos um lucro de 15,00. Se vendermos apenas 50,00, que é o
+            Ponto de Equilíbrio, não teremos lucro nem prejuízo.</p>
+
+        <h1>Calculadora da Teoria dos Rendimentos:</h1>
+
+        <table align="left" style="margin-bottom:20px; border-collapse:separate; border-spacing:10px;">
+            <tr>
+                <td>
+                    <input class="form-control" placeholder="Quantidade Produzida (Q)" type="number" id="q"/>
+                </td>
+                <td>
+                    <input class="form-control" placeholder="Custo Fixo (CF)" type="number" id="cf"/>
+                </td>
+                <td>
+                    <input class="form-control" placeholder="Custo Variável (CV)" type="number" id="cv"/>
+                </td>
+                <td>
+                    <input type="button" class="btn btn-primary" value="Adicionar na Tabela" onClick="addRow()" id="add">
+                </td>
+            </tr>
+        </table>
+
+        <table id="table" class="table table-bordered col-md-6" border="1">
+            <tr>
+                <th>Quantidade Produzida (Q)</th>
+                <th>Custo Fixo (CF)</th>
+                <th>Custo Variável (CV)</th>
+                <th>Custo Total (CT)</th>
+                <th>Custo Fixo Médio (CFme)</th>
+                <th>Custo Variável Médio (CVme)</th>
+                <th>Custo Médio (Cme)</th>
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script>
+    function addRow() {
+        var table = document.getElementById("table");
+        var row = document.createElement("tr");
+
+        var q = document.createElement("td");
+        var cf = document.createElement("td");
+        var cv = document.createElement("td");
+        var ct = document.createElement("td");
+        var cfme = document.createElement("td");
+        var cvme = document.createElement("td");
+        var cme = document.createElement("td");
+
+        var q_numero = eval(document.getElementById("q").value);
+        var cf_numero = eval(document.getElementById("cf").value);
+        var cv_numero = eval(document.getElementById("cv").value);
+
+        q.innerHTML = q_numero;
+        cf.innerHTML = cf_numero;
+        cv.innerHTML = cv_numero;
+
+        ct.innerHTML = cf_numero + cv_numero;
+
+        var cfme_numero = cf_numero / q_numero
+        cfme.innerHTML = cfme_numero;
+        var cvme_numero = cv_numero / q_numero
+        cvme.innerHTML = cvme_numero;
+        cme.innerHTML = cfme_numero + cvme_numero;
+
+        row.appendChild(q);
+        row.appendChild(cf);
+        row.appendChild(cv);
+        row.appendChild(ct);
+        row.appendChild(cfme);
+        row.appendChild(cvme);
+        row.appendChild(cme);
+
+        table.children[0].appendChild(row);
+    }
+</script>
+
+</html>
