@@ -37,6 +37,20 @@
 
         <img src="images/pme_formula.png" vspace="30">
 
+        <div style="border: 1px solid black; margin-bottom:30px;">
+            <h1>Calculadora de PMe:</h1>
+            <table align="center" style="margin-bottom:20px; border-collapse:separate; border-spacing:10px;">
+                <tr>
+                    <td><input type="number" class="form-control" id="pme_q" placeholder="Qte. produzida" style="width:140px;"></td>
+                    <td>/</td>
+                    <td><input type="number" class="form-control" id="pme_xi" placeholder="Qte. utilizada" style="width:130px;"></td>
+                    <td><button type="button" onClick="calcula_pme()" class="btn btn-primary">Calcular PMe</button></td>
+                </tr>
+            </table>
+
+            <h3 id="pme_resultado"></h3>
+        </div>
+
         <p>A
             <b>produtividade marginal de um fator</b> (PMg) é calculada como o quociente entre a
             <b>variação</b> na quantidade produzida (q) e a
@@ -44,6 +58,24 @@
             da teoria da produção ƒ(x1,...,xn)</p>
 
         <img src="images/pmg_formula.png" vspace="30">
+
+        <div style="border: 1px solid black; margin-bottom:30px;">
+            <h1>Calculadora de PMg:</h1>
+            <table align="center" style="margin-bottom:20px; border-collapse:separate; border-spacing:10px;">
+                <tr>
+                    <td><input type="number" class="form-control" id="pmg_qf" placeholder="Qte. prod. final" style="width:140px;"></td>
+                    <td>-</td>
+                    <td><input type="number" class="form-control" id="pmg_qi" placeholder="Qte. prod. inicial" style="width:150px;"></td>
+                    <td>/</td>
+                    <td><input type="number" class="form-control" id="pmg_xf" placeholder="Qte. utilizada final" style="width:160px;"></td>
+                    <td>-</td>
+                    <td><input type="number" class="form-control" id="pmg_xi" placeholder="Qte. utilizada inicial" style="width:170px;"></td>
+                    <td><button type="button" onClick="calcula_pmg()" class="btn btn-primary">Calcular PMg</button></td>
+                </tr>
+            </table>
+
+            <h3 id="pmg_resultado"></h3>
+        </div>
 
         <p>A produtividade marginal de Xi mede a quantidade de unidades produzidas (q) que cresce com o acréscimo de uma unidade
             de Xi.</p>
@@ -69,5 +101,29 @@
         </ul>
     </div>
 </body>
+
+<script>
+    function calcula_pme(event) {
+        var q = eval(document.getElementById("pme_q").value);
+        var xi = eval(document.getElementById("pme_xi").value);
+
+        var pib = eval(q / xi);
+
+        var text = document.getElementById("pme_resultado");
+        text.innerHTML = "= " + pib;
+    }
+
+    function calcula_pmg(event) {
+        var qf = eval(document.getElementById("pmg_qf").value);
+        var qi = eval(document.getElementById("pmg_qi").value);
+        var xf = eval(document.getElementById("pmg_xf").value);
+        var xi = eval(document.getElementById("pmg_xi").value);
+
+        var pib = eval(qf - qi / xf - xi);
+
+        var text = document.getElementById("pmg_resultado");
+        text.innerHTML = "= " + pib;
+    }
+</script>
 
 </html>
